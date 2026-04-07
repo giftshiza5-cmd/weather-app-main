@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Now</title>
+  <style>
+    :root{
+      --primary-color: hsl(243, 96%, 9%);
+      --a-color: hsl(243, 23%, 24%);
+      --random-ahh-color: hsl(243, 23%, 30%);
+    }
+    body{
+        background-color:  hsl(243, 96%, 9%);
+        color: white;
+        font-family: Arial,sans-serif;
+    }
+    .container{
+        padding: 50px;
+    }
+    header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    h1{
+        text-align: center;
+        margin: 30px 0;
+    }
+    .search-box{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .search-box input{
+        width: 400px;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid  hsl(243, 96%, 9%) ;
+        background-color:  hsl(243, 27%, 20%);
+    }
+    
+    .weather-card{
+      width: 700px;
+      height: 300px;
+      margin-bottom: 0;
+      margin-bottom: 0;
+    }
+    .weather-card img{
+      width: 600px;
+      height: 300px;
+      position: relative;
+      top: 5px;
+      left: 5px;
+      margin-bottom: 0;
+    }
+    .info{
+      position: relative;
+      bottom: 180px;
+      left: 10px;
+    }
+    .main-icon{
+      position: relative;
+      bottom:200px;
+      left: 400px ;
+      width: 100px;
+    }
+    .temp{
+      position: relative;
+      bottom: 300px;
+      left: 500px;
+      font-size: 60px;
+    }
+    .stats{
+      display: flex;
+      flex-direction: row;
+      border: 1px solid var(--primary-color);
+      justify-content: flex-start;
+      margin-top: 0;
+      gap: 15px;
+      position:absolute;
+      top: 550px;
+    }
+    .stats div{
+      background-color: var(--a-color);
+      width: 100px;
+      height: 100px;
+      align-content: center;
+      border-radius: 20px;
+      padding-left: 15px;
+    }
+    .daily{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 5px;
+    }
+    .daily div{
+      background-color: var(--a-color);
+      border-radius: 20px;
+      height: 150px;
+      width: 90px;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+    }
+    .daily img{
+      width: 30px;
+    }
+    .hourly-stuff{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 5px;
+      width: 200px;
+      border-radius: 20px;
+      background-color: var(--a-color);
+      justify-content: center;
+    }
+    .hourly-stuff img{
+      width: 30px;
+    }
+    .hourly-stuff div{
+      background-color: var(--random-ahh-color);
+      width: 300px;
+      border-radius: 10px;
+      height: 50px;
+
+    }
+    .hourly{
+      background-color: var(--a-color);
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      position: absolute;
+      top: 300px;
+      left: 800px;
+    }
+    .day-select{
+      position: absolute;
+      top: 30px;
+      left:220px ;
+    
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="assets/images/logo.svg" alt="logo">
+    </div>
+
+    <button class="units">
+      <img src="assets/images/icon-units.svg" alt="units">
+      Units
+      <img src="assets/images/icon-dropdown.svg" alt="">
+    </button>
+  </header>
+
+  <!-- TITLE -->
+  <h1>How's the sky looking today?</h1>
+
+  <!-- SEARCH -->
+  <div class="search-box">
+    
+    <div>
+      <img src="assets/images/icon-search.svg" class="search-icon" alt="search">
+      <input type="text" placeholder="Search for a place...">
+    </div>
+
+    <button class="search-btn">Search</button>
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+
+      <!-- WEATHER CARD -->
+       <div>
+         <div class="weather-card">
+           <div><img src="assets/images/bg-today-large.svg" alt=""></div>
+           <div class="info">
+             <h2>Berlin, Germany</h2>
+             <p>Tuesday, Aug 5, 2025</p>
+            </div>
+          </div>
+          <div>
+          <img src="assets/images/icon-sunny.webp" class="main-icon" alt="weather" width="100px">
+          </div>
+ 
+        <div class="temp">68°</div>
+
+      </div>
+
+      <!-- STATS -->
+      <div class="stats">
+        <div>Feels Like <br> <span>64°</span></div>
+        <div>Humidity  <br><span>46%</span></div>
+        <div>Wind <br><span>9 mph</span></div>
+        <div>Precipitation <br> <span>0 in</span></div>
+      </div>
+
+      <!-- DAILY FORECAST -->
+      <div class="daily">
+
+        <div class="day">
+          <p>Tue</p>
+          <img src="assets/images/icon-drizzle.webp">
+          <span>68° / 57°</span>
+        </div>
+
+        <div class="day">
+          <p>Wed</p>
+          <img src="assets/images/icon-rain.webp">
+          <span>70° / 59°</span>
+        </div>
+
+        <div class="day">
+          <p>Thu</p>
+          <img src="assets/images/icon-sunny.webp">
+          <span>75° / 57°</span>
+        </div>
+
+        <div class="day">
+          <p>Fri</p>
+          <img src="assets/images/icon-partly-cloudy.webp">
+          <span>77° / 55°</span>
+        </div>
+
+        <div class="day">
+          <p>Sat</p>
+          <img src="assets/images/icon-storm.webp">
+          <span>70° / 59°</span>
+        </div>
+
+        <div class="day">
+          <p>Sun</p>
+          <img src="assets/images/icon-rain.webp">
+          <span>77° / 61°</span>
+        </div>
+
+        <div class="day">
+          <p>Mon</p>
+          <img src="assets/images/icon-fog.webp">
+          <span>75° / 59°</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="hourly">
+
+      <div class="hourly-header">
+        <h3>Hourly forecast</h3>
+        <button class="day-select">Tuesday ▼</button>
+      </div>
+      <div class="hourly-stuff">
+      <div class="hour">
+        <img src="assets/images/icon-overcast.webp">
+        <span>3 PM</span>
+        <span>68°</span>
+      </div>
+      
+      <div class="hour">
+        <img src="assets/images/icon-partly-cloudy.webp">
+        <span>4 PM</span>
+        <span>68°</span>
+      </div>
+      
+      <div class="hour">
+        <img src="assets/images/icon-sunny.webp">
+        <span>5 PM</span>
+        <span>68°</span>
+      </div>
+      
+      <div class="hour">
+        <img src="assets/images/icon-overcast.webp">
+        <span>6 PM</span>
+        <span>66°</span>
+      </div>
+      
+      <div class="hour">
+        <img src="assets/images/icon-drizzle.webp">
+        <span>7 PM</span>
+        <span>66°</span>
+      </div>
+      
+      <div class="hour">
+        <img src="assets/images/icon-fog.webp">
+        <span>8 PM</span>
+        <span>64°</span>
+      </div>
+      
+      <div class="hour">
+        <img src="assets/images/icon-drizzle.webp">
+        <span>9 PM</span>
+        <span>63°</span>
+      </div>
+      
+      <div class="hour">
+        <img src="assets/images/icon-overcast.webp">
+        <span>10 PM</span>
+        <span>63°</span>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
