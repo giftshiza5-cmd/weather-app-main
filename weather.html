@@ -136,14 +136,48 @@
       width: 300px;
       position: absolute;
       top: 300px;
-      left: 800px;
+      left: 1100px;
     }
     .day-select{
       position: absolute;
       top: 30px;
       left:220px ;
+      background-color: var(--a-color);
+      border-radius: 5px;
+      border: 1px solid var(--random-ahh-color);
+      color: white;
     
     }
+    .units{
+      background-color: var(--a-color);
+      border-radius: 5px;
+      border: 1 px solid var(--primary-color);
+      color: white;
+      width: 100px;
+      padding: 2px;
+      height: 40px;
+      font-size: 15px;
+      position: absolute;
+      right: 100px;
+    }
+    .units img{
+      width: 15px;
+    }
+    .search-btn{
+      background-color:  hsl(233, 67%, 56%);
+      width: 100px;
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+
+    }
+    .logo{
+      position: absolute;
+      left: 30px;
+    }
+     .main{
+      align-items: center;
+      padding-left: 300px;
+     }
   </style>
 </head>
 <body>
@@ -262,7 +296,9 @@
 
       <div class="hourly-header">
         <h3>Hourly forecast</h3>
-        <button class="day-select">Tuesday ▼</button>
+        <button class="day-select">Tuesday 
+          <img src="assets/images/icon-dropdown.svg" alt="">
+        </button>
       </div>
       <div class="hourly-stuff">
       <div class="hour">
